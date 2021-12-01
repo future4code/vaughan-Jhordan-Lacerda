@@ -76,6 +76,6 @@ SUBI NUM ÔNIBUS EM MIRROCOS 27
 
 //SEGUNDA QUESTÃO
 
-const frutas = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"];
-console.log(`Índice do abacaxi: ${frutas.indexOf("Abacaxi")}, tamanho da array é ${frutas.length}`);
+// const frutas = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"];
+// console.log(`Índice do abacaxi: ${frutas.indexOf("Abacaxi")}, tamanho da array é ${frutas.length}`);
  
