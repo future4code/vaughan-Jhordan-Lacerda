@@ -118,3 +118,38 @@ b) Só iria realizar a operação e nada seria mostrado no console.
 // subtrairNumeros(num1, num2);
 // multiplicarNumeros(num1, num2);
 // dividirNumeros(num1, num2);
+
+
+//DESAFIO
+
+//Primeira questão
+
+//a)
+// let funcao = paramentro => {
+//   console.log(paramentro);
+// }
+
+//b)
+// let somarNumeros = (num1, num2) => {
+//   soma = num1 + num2;
+//   funcao(soma);
+// }
+
+// const num1 = Number(prompt("Digite um número:"));
+// const num2 = Number(prompt("Digite um segundo número:"));
+
+// somarNumeros(num1, num2);
+
+
+//Segunda questão
+
+// let pitagoras = (catOp, catAdj) => {
+//   const hipo = Math.sqrt(Math.pow(catOp, 2) + Math.pow(catAdj, 2));
+
+//   return console.log(hipo);
+// }
+
+// const catOp = Number(prompt("Digite o catato oposto:"));
+// const catAdj = Number(prompt("Digite o cateto adjacente:"));
+
+// pitagoras(catOp, catAdj);
