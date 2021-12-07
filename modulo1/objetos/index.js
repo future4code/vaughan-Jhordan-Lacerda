@@ -65,3 +65,120 @@
 
 //mostrar(pessoa1, pessoa2);
 
+//Questão 3
+
+//a)
+// const carrinho = [];
+
+//b)
+// const fruta1 = {
+//     nome: "Maçã",
+//     disponibilidade: true
+// }
+
+// const fruta2 = {
+//     ...fruta1,
+//     nome: "Banana"
+// }
+
+// const fruta3 = {
+//     ...fruta1,
+//     nome: "uva"
+// }
+
+//c)
+// const adicionarFruta = (fruta) =>{
+//     carrinho.push(fruta); 
+// }
+
+// adicionarFruta(fruta1);
+// adicionarFruta(fruta2);
+// adicionarFruta(fruta3);
+
+//d)
+// console.log(carrinho);
+
+
+//Desafios
+
+//Primeiro desafio
+// let nome;
+// let idade;
+// let profissao;
+
+// const perguntar = () => {
+//     nome = prompt("Digite seu nome:");
+//     idade = Number(prompt("Digite sua idade"));
+//     profissao = prompt("Digite sua profissão:");
+
+// }
+
+// perguntar();
+
+// const pessoa = {
+//     nome: nome,
+//     idade: idade,
+//     profissao: profissao
+// }
+
+// console.log(pessoa);
+// console.log(typeof pessoa);
+
+
+//Segundo Desafio
+// const filme1 = {
+//     nome: "Vingadores: Era de Ultron",
+//     anoDeLancamento: 2015
+// }
+
+// const filme2 = {
+//     nome: "Vingadores: Guerra Infinita",
+//     anoDeLancamento: 2018
+// }
+
+// const compararDataFilmes = (filme1, filme2) => {
+//     const logica1 = (filme1.anoDeLancamento < filme2.anoDeLancamento);
+//     const logica2 = (filme1.anoDeLancamento === filme2.anoDeLancamento);
+
+//     return console.log(`O primeiro filme foi lançado antes do segundo? ${logica1}
+// O primeiro filme foi lançado no mesmo ano do segundo? ${logica2}`);
+// }
+
+// compararDataFilmes(filme1, filme2);
+
+
+//Terceiro Desafio
+// const carrinho = [];
+
+// const fruta1 = {
+//     nome: "Maçã",
+//     disponibilidade: true
+// }
+        
+// const fruta2 = {
+//     ...fruta1,
+//     nome: "Banana"
+// }
+    
+// const fruta3 = {
+//     ...fruta1,
+//     nome: "uva"
+//     }
+    
+// const adicionarFruta = (fruta) =>{
+//     carrinho.push(fruta); 
+// }
+
+// const controlarEstoque = (fruta) => {
+//     const disponibilidadeInvertida = !fruta.disponibilidade;
+
+//     return fruta.disponibilidade = disponibilidadeInvertida;
+// }
+
+// controlarEstoque(fruta2);
+    
+// adicionarFruta(fruta1);
+// adicionarFruta(fruta2);
+// adicionarFruta(fruta3);
+    
+// console.log(carrinho);
