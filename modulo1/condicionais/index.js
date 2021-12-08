@@ -76,3 +76,173 @@
 // } else {
 //     console.log("Escolha outro filme :(")
 // }
+
+
+//Desafios
+
+//1°)
+// const genero = prompt("Digite o gênero de filme que vão assistir:").toLowerCase().trim();
+// const precoIngresso = Number(prompt("Digite o valor a ser pago pelo ingresso"));
+// const lanche = prompt("Qual lanche você vai comprar:").trim();
+
+// if(genero === "fantasia" && precoIngresso <= 15) {
+//     console.log("Bom filme!");
+//     console.log(`Aproveite o seu ${lanche}`);
+// } else {
+//     console.log("Escolha outro filme :(")
+// }
+
+
+//2°)
+// const comprador = {
+//     nomeCompleto: prompt("Digite seu nome completo:").trim(),
+//     tipoDeJogo: prompt("Qual o tipo de jogo que deseja assistir? (Nacional ou Internacional)").toLowerCase().trim(),
+//     etapaDeJogo: prompt("Qual a etapa de jogo da partida que deseja assistir? (SF indica semi-final; DT indica decisão de terceiro lugar; e FI indica final)").toUpperCase().trim(),
+//     categoria: Number(prompt("Qual a categoria da partida ? (opções 1, 2, 3 ou 4)").trim()),
+//     quantidadeDeIngressos: Number(prompt("Digite a quantidade de ingressos que deseja:"))
+// }
+
+// let valor;
+
+// const calcularPrecoNacional = (etapa) => {
+//     if(etapa === "SF"){
+//         switch (comprador.categoria) {
+//             case 1:
+//                 valor = 1320;
+//                 break
+//             case 2: 
+//                 valor = 880;
+//                 break;
+//             case 3:
+//                 valor = 550;
+//                 break;
+//             case 4: 
+//                 valor = 220;
+//                 break;
+//         }
+//     } else if (etapa === "DT"){
+//         switch (comprador.categoria) {
+//             case 1:
+//                 valor = 660;
+//                 break;
+//             case 2: 
+//                 valor = 440;
+//                 break;
+//             case 3:
+//                 valor = 330;
+//                 break;
+//             case 4: 
+//                 valor = 170;
+//                 break;
+//         }
+//     } else if (etapa === "FI"){
+//         switch (comprador.categoria) {
+//             case 1:
+//                 valor = 1980;
+//                 break;
+//             case 2: 
+//                 valor = 1320;
+//                 break;
+//             case 3:
+//                 valor = 880;
+//                 break;
+//             case 4: 
+//                 valor = 330;
+//                 break;
+//         }
+//     } else {
+//         console.log("Digite uma etapa válida");
+//     }
+//     const valorTotal = (valor * comprador.quantidadeDeIngressos);
+
+//     return `Valor do ingresso: ${valor}
+//             Valor total: ${valorTotal}`;
+// }
+
+// const calcularPrecoInternacional = (etapa) => {
+//     if(etapa === "SF"){
+//         switch (comprador.categoria) {
+//             case 1:
+//                 valor = 1320 * 4.10;
+//                 break
+//             case 2: 
+//                 valor = 880 * 4.10;
+//                 break;
+//             case 3:
+//                 valor = 550 * 4.10;
+//                 break;
+//             case 4: 
+//                 valor = 220 * 4.10;
+//                 break;
+//         }
+//     } else if (etapa === "DT"){
+//         switch (comprador.categoria) {
+//             case 1:
+//                 valor = 660 * 4.10;
+//                 break;
+//             case 2: 
+//                 valor = 440 * 4.10;
+//                 break;
+//             case 3:
+//                 valor = 330 * 4.10;
+//                 break;
+//             case 4: 
+//                 valor = 170 * 4.10;
+//                 break;
+//         }
+//     } else if (etapa === "FI"){
+//         switch (comprador.categoria) {
+//             case 1:
+//                 valor = 1980 * 4.10;
+//                 break;
+//             case 2: 
+//                 valor = 1320 * 4.10;
+//                 break;
+//             case 3:
+//                 valor = 880 * 4.10;
+//                 break;
+//             case 4: 
+//                 valor = 330 * 4.10;
+//                 break;
+//         }
+//     } else {
+//         console.log("Digite uma etapa válida");
+//     }
+//     const valorTotal = (valor * comprador.quantidadeDeIngressos);
+
+//     return `Valor do ingresso: ${valor}
+//             Valor total: ${valorTotal}`;
+// }
+
+// const formatar = (etapaNaoFormatada) => {
+//     if(etapaNaoFormatada === "SF"){
+//         const etapaFormatada = "Semi-Finais";
+//         return etapaFormatada;
+
+//     } else if (etapaNaoFormatada === "DT"){
+//         const etapaFormatada = "Disputa 3° lugar";
+//         return etapaFormatada;
+
+//     } else if(etapaNaoFormatada === "FI"){
+//         const etapaFormatada = "Finais";
+//         return etapaFormatada;
+//     }
+// }
+
+// const imprimirNotaFiscal = (nome, tipoDejogo, etapaDeJogo, categoria, qtdDeIngressos) => {
+//     console.log("-----Dados da compra-----");
+//     console.log(`Nome do cliente: ${nome}`);
+//     console.log(`Tipo de jogo: ${tipoDejogo}`);
+//     console.log(`Etapa de jogo: ${formatar(etapaDeJogo)}`);
+//     console.log(`Categoria: ${categoria}`);
+//     console.log(`Quantidade de Ingressos: ${qtdDeIngressos}`);
+//     console.log("-----Valores-----");
+
+//     if(comprador.tipoDeJogo === "nacional"){
+//         console.log(calcularPrecoNacional(comprador.etapaDeJogo));
+//     } else if (comprador.tipoDeJogo === "internacional"){
+//         console.log(calcularPrecoInternacional(comprador.etapaDeJogo));
+//     }
+// }
+
+// imprimirNotaFiscal(comprador.nomeCompleto, comprador.tipoDeJogo, comprador.etapaDeJogo, comprador.categoria, comprador.quantidadeDeIngressos);
