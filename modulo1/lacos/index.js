@@ -39,7 +39,7 @@
 
 
 //2°)
-const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55];
+//const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55];
 
 //a)
 // const imprimirValoresArrayOriginal = (array) => {
@@ -107,3 +107,52 @@ const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55];
 // }
 
 // menorEMaiorDoArray(arrayOriginal);
+
+//DESAFIOS
+
+//1°)
+// const numeroEscolhido = Number(prompt("Let´s play"));
+// let numeroChutado = Number(prompt("Diga seu chute:"));
+
+// for(let i = 1; i < 100; i++){
+//       if(numeroChutado > numeroEscolhido){
+//             console.log(`Seu chute foi: ${numeroChutado}`);
+//             console.log("Errou, errou feio, errou rude, é menor!");
+//             numeroChutado = Number(prompt("Diga seu chute:"));
+//       } else if(numeroChutado < numeroEscolhido){
+//             console.log(`Seu chute foi: ${numeroChutado}`);
+//             console.log("Errrrrrrooooouuuu, é maior!");
+//             numeroChutado = Number(prompt("Diga seu chute:"));
+//       } else if(numeroChutado === numeroEscolhido){
+//             console.log(`Seu chute foi: ${numeroChutado}`);
+//             console.log("Acertô, miserevi");
+//             console.log(`O número de tentativas foi ${i}`);
+//             break;
+//       }
+// }
+
+
+//2°)
+// const numeroSorteado = Math.floor((Math.random() * 100) + 1);
+// let numeroChutado = Number(prompt("Diga seu chute:"));
+
+// for(let i = 1; i < 100; i++){
+//       if(numeroChutado > numeroSorteado){
+//             console.log(`Seu chute foi: ${numeroChutado}`);
+//             console.log("Errou, errou feio, errou rude, é menor!");
+//             numeroChutado = Number(prompt("Diga seu chute:"));
+//       } else if(numeroChutado < numeroSorteado){
+//             console.log(`Seu chute foi: ${numeroChutado}`);
+//             console.log("Errrrrrrooooouuuu, é maior!");
+//             numeroChutado = Number(prompt("Diga seu chute:"));
+//       } else if(numeroChutado === numeroSorteado){
+//             console.log(`Seu chute foi: ${numeroChutado}`);
+//             console.log("Acertô, miserevi");
+//             console.log(`O número de tentativas foi ${i}`);
+//             break;
+//       }
+// }
+
+//Sim, foi fácil fazer a alteração, acho que não poderia ser mais fácil, 
+//pois eu apenas declarei uma variável que armazena o número aleatório, ao invés de declarar uma que receberia do usuário
+//e depois só tive que mudar o nome da variável nos ifs.
