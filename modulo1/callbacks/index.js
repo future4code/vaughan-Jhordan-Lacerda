@@ -45,18 +45,18 @@
 
 //2°)
 //a)
-const produtos = [
-   { nome: "Alface Lavada", categoria: "Hortifruti", preco: 2.5 },
-   { nome: "Guaraná 2l", categoria: "Bebidas", preco: 7.8 },
-   { nome: "Veja Multiuso", categoria: "Limpeza", preco: 12.6 },
-   { nome: "Dúzia de Banana", categoria: "Hortifruti", preco: 5.7 },
-   { nome: "Leite", categoria: "Bebidas", preco: 2.99 },
-   { nome: "Cândida", categoria: "Limpeza", preco: 3.30 },
-   { nome: "Detergente Ypê", categoria: "Limpeza", preco: 2.2 },
-   { nome: "Vinho Tinto", categoria: "Bebidas", preco: 55 },
-   { nome: "Berinjela kg", categoria: "Hortifruti", preco: 8.99 },
-   { nome: "Sabão em Pó Ypê", categoria: "Limpeza", preco: 10.80 }
-]
+// const produtos = [
+//    { nome: "Alface Lavada", categoria: "Hortifruti", preco: 2.5 },
+//    { nome: "Guaraná 2l", categoria: "Bebidas", preco: 7.8 },
+//    { nome: "Veja Multiuso", categoria: "Limpeza", preco: 12.6 },
+//    { nome: "Dúzia de Banana", categoria: "Hortifruti", preco: 5.7 },
+//    { nome: "Leite", categoria: "Bebidas", preco: 2.99 },
+//    { nome: "Cândida", categoria: "Limpeza", preco: 3.30 },
+//    { nome: "Detergente Ypê", categoria: "Limpeza", preco: 2.2 },
+//    { nome: "Vinho Tinto", categoria: "Bebidas", preco: 55 },
+//    { nome: "Berinjela kg", categoria: "Hortifruti", preco: 8.99 },
+//    { nome: "Sabão em Pó Ypê", categoria: "Limpeza", preco: 10.80 }
+// ]
 
 //a)
 // const apenasNomeDoItem = produtos.map((produto) => {
@@ -107,3 +107,41 @@ const produtos = [
  
 // const mensagemYpe = apenasYpe.map(produto => `Compre ${produto.nome} por ${produto.preco}`);
 // console.log(mensagemYpe);
+
+
+//DESAFIOS
+
+// const pokemons = [
+//    { nome: "Bulbasaur", tipo: "grama" },
+//    { nome: "Bellsprout", tipo: "grama" },
+//    { nome: "Charmander", tipo: "fogo" },
+//    { nome: "Vulpix", tipo: "fogo" },
+//    { nome: "Squirtle", tipo: "água" },
+//    { nome: "Psyduck", tipo: "água" },
+// ]
+
+//a)
+// pokemons.sort(function (a,b){
+//    if (a.nome > b.nome) {
+//       return 1;
+//     }
+//     if (a.nome < b.nome) {
+//       return -1;
+//     }
+//     return 0;
+// });
+
+// const arrayEmOrdemAlfabetica = pokemons.map((pokemon) => {
+//    console.log(pokemon.nome);
+// })
+
+//b)
+// const arraySoComTipos = pokemons.map((pokemon) => {
+//     return pokemon.tipo;
+// })
+
+// const arraySemRepeticaoDeTipo = arraySoComTipos.filter((pokemon, index) => {
+//    return arraySoComTipos.indexOf(pokemon) === index;
+// })
+
+// console.log(arraySemRepeticaoDeTipo)
