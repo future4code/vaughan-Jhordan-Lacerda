@@ -39,7 +39,14 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
+    const arrayNumerosPares = []
 
+    for(let num of array){
+      if(num % 2 === 0){
+        arrayNumerosPares.push(Math.pow(num, 2));
+      }
+  }
+  return arrayNumerosPares
 }
 
 // EXERCÍCIO 06
