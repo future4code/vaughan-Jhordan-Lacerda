@@ -25,7 +25,14 @@ function retornaArrayOrdenado(array) {
 }
 // EXERCÍCIO 04
 function retornaNumerosPares(array) {
-    
+    const arrayNumerosPares = []
+
+    for(let num of array){
+      if(num % 2 === 0){
+        arrayNumerosPares.push(num);
+      }
+  }
+  return arrayNumerosPares
 }
 
 //fiz o exercício 4 sem ler o desafio e quando fui ver o desafio, era exatamente o que eu tinha feito KKKKKKKK
