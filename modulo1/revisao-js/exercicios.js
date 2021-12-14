@@ -154,11 +154,11 @@ function retornaPessoasNaoAutorizadas(pessoas) {
     const pessoasNaoAutorizadas = [];
 
     for(let pessoa of pessoas){
-        if(pessoa.idade < 14 || pessoa.idade > 60 || pessoa.altura < 1.5){
-            pessoasAutorizadas.push(pessoa);
+        if(pessoa.idade <= 14 || pessoa.idade >= 60 || pessoa.altura < 1.5){
+            pessoasNaoAutorizadas.push(pessoa);
         }
     }
-    return pessoasAutorizadas
+    return pessoasNaoAutorizadas
 }
 
 // EXERCÍCIO 14
