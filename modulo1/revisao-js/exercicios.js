@@ -108,12 +108,23 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
+
 }
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   
+    const atores = [];
+
+    for(let ator of filme.atores){
+        atores.push(ator);
+    }
+
+    const mensagem = `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${atores}.`;
+    return mensagem
+
+    //sincerramente eu não sei o que está errado aqui, 
+    //no teste está dando erro por causa de um espaço e se eu boto esse espaço assim ${" ", atores} não muda nada
+    // e se eu boto ${atores, " "} o código quebra.
 }
 
 // EXERCÍCIO 12
