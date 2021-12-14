@@ -119,12 +119,8 @@ function retornaChamadaDeFilme(filme) {
         atores.push(ator);
     }
 
-    const mensagem = `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${atores}.`;
+    const mensagem = `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${atores.join(", ")}.`;
     return mensagem
-
-    //sincerramente eu não sei o que está errado aqui, 
-    //no teste está dando erro por causa de um espaço e se eu boto esse espaço assim ${" ", atores} não muda nada
-    // e se eu boto ${atores, " "} o código quebra.
 }
 
 // EXERCÍCIO 12
