@@ -139,7 +139,14 @@ function retornaPessoaAnonimizada(pessoa) {
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-  
+    const pessoasAutorizadas = [];
+
+    for(let pessoa of pessoas){
+        if(pessoa.idade > 14 && pessoa.idade < 60 && pessoa.altura >= 1.5){
+            pessoasAutorizadas.push(pessoa);
+        }
+    }
+    return pessoasAutorizadas  
 }
 
 // EXERCÍCIO 13B
