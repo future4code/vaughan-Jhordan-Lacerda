@@ -1,0 +1,31 @@
+.cabecalho {
+    background-color: #fff3c2;
+    color: rgb(13, 13, 158);
+    text-align: center;
+}
+
+.rodape {
+    background-color: #54FF9F;
+    right: 300px;
+}
+
+h5{
+    text-align: center;
+    padding-top: 50px;
+}
+
+#imagem-facebook{
+    width: 2%;
+}
+
+#imagem-instagram {
+    width: 2%;
+}
+
+#imagem-twitter {
+    width: 2%;
+}
+
+.produtos {
+    margin-bottom: 0.1%;
+}
