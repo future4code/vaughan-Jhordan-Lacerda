@@ -1,11 +1,16 @@
 .cabecalho {
-    background-color: #fff3c2;
-    color: rgb(13, 13, 158);
+    background-color:#3a55cc;
+    color: white;
     text-align: center;
 }
 
+body{
+    background-color:  #520c0c;
+    margin: 0px;
+}
+
 .rodape {
-    background-color: #54FF9F;
+    background-color: #3D87B3;
     right: 300px;
 }
 
