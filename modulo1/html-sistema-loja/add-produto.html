@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Adicionar Produto</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <p><em>VL´s Store</em></p>
+
+        <div>
+            <a href="index.html">Página Inicial</a>
+            <a href="ctrl-estoque.html">Controle de Estoque</a>
+            <a href="add-produto.html">Adicionar Produto</a>
+            <a href="funcionarios.html">Funcionários</a>
+            <a href="pagina-vendas.html">Página de vendas</a>
+            <a href="historico-de-vendas.html">Histórico de vendas</a>
+        </div>
+    </header>
+
+    <h2>Adicionar Produto</h2>
+    <form action="">
+        <div>
+            <label for="link-foto">Link para foto: </label>
+            <input type="url" id="link-foto" name="link-foto">
+        </div>
+        
+        <div>
+            <label for="descricao">Descrição do produto: </label>
+            <!-- Adicione o id apropriado para o input abaixo -->
+            <input type="text" id="descricao" name="descrição">
+        </div>
+        
+        <div>
+            <label for="preco">Preço (em R$): </label>
+            <!-- Adicione o id apropriado e o type para receber números abaixo -->
+            <input type="number" id="preco" name="preço">
+        </div>
+        
+        <div>
+            <!-- Preencha as propriedades necessárias para os elementos abaixo -->
+            <label for="qtd-disponivel">Quantidade disponível: </label>
+            <input type="number" id="qtd-disponivel" name="qtd-disponivel">
+        </div>
+
+        <div class="form-add">
+            <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
+            <button type="submit">Adicionar</button>
+        </div>
+
+    </form>
+
+    <footer class="rodape">
+        <h5>Feito com muito &#128151 por Jhordan Lacerda</h5>
+
+        <div>
+            <p>Siga-nos nas redes sociais!</p>
+    
+            <div>
+                <img id="imagem-facebook" src="https://image.flaticon.com/icons/png/512/25/25305.png"/>
+                <img id="imagem-instagram" src="https://image.flaticon.com/icons/png/512/25/25425.png"/>
+                <img id="imagem-twitter" src="https://image.flaticon.com/icons/png/512/8/8800.png"/>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
