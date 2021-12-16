@@ -171,3 +171,10 @@ td button:hover {
     width: auto;
     height: auto;
 }
+
+#barra-de-pesquisa{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-width: 2px;
+}
