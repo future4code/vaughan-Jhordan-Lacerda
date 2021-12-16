@@ -146,3 +146,11 @@ td button {
 #back-button:hover {
     background-color: #635a3d
 }
+
+img {
+    max-width: 50px;
+    max-height: 40px;
+
+    width: auto;
+    height: auto;
+}
