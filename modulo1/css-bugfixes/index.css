@@ -78,7 +78,7 @@ div img {
 }
 
 #p-descricao {
-    width: 180px;
+    width: 210px;
 }
 
 #container-de-descricao>ol {
@@ -90,14 +90,16 @@ div img {
 }
 
 #container-para-comprar>p {
+    display: block;
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
+    border-top: 100px;
 }
 
 .botao-amarelo {
     display: block;
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
 }
