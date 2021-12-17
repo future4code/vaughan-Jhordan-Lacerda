@@ -83,6 +83,7 @@ div img {
 
 #container-de-descricao>ol {
     padding: 15px 0px;
+    text-align: center;
 }
 
 #container-para-comprar {
@@ -173,6 +174,14 @@ td button:hover {
     width: auto;
     height: auto;
 
+}
+
+#lupa-pesquisa:hover {
+    opacity: 0.6;
+}
+
+#lupa-pesquisa:active{
+    opacity: 1;
 }
 
 .tabela-imagens img {
