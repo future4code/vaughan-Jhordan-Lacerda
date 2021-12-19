@@ -1,0 +1,80 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* estilos do cabeçalho */
+header {
+    text-align: right;
+    background-color: #49AAAD;
+    padding: 1%;
+}
+
+/* estilos dos container */
+.container {
+    padding: 3%;
+    /* text-align: center; */
+}
+
+/* estilos do Sobre Mim */
+#texto-descritivo {
+    text-align: justify;
+    margin-top: 2%;
+}
+
+#texto-descritivo > h3{
+    text-align: left;
+    padding: 15px;
+}
+
+/* estilos das instituições frequentadas */
+#lista-instituicao {
+    text-align: center;
+}
+
+#lista-instituicao > img{
+    padding: 50px;
+    width: 150px;
+    height: 100px;
+}
+
+#lista-instituicao > ul{
+    text-align: left;
+}
+
+/* estilos de habilidades */
+#habilidade-1 {
+    display: inline-block;
+    border:10px groove;
+    border-color: #0A1172;
+}
+
+/* estilos de Meus projetos */
+.foto-projeto {
+    width: 400px;
+    height: 300px;
+    padding: 40px 100px;
+}
+
+/* estilos pré-footer */
+#pre-footer {
+    background-color: #52b2bf;
+}
+
+/* estilos footer */
+footer {
+    background-color: #49AAAD;
+}
+
+footer > p {
+    text-align: center;
+    padding: 1%;
+}
+
+#img-redes-sociais {
+    text-align: right;
+}
+#img-redes-sociais > img{
+    width: 2%;
+}

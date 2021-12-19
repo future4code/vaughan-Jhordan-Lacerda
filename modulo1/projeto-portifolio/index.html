@@ -11,15 +11,15 @@
 
 <body>
     <header>
-        Header para links
+        <a href="index.html">Home</a>
     </header>
 
     <div class="container" id="texto-descritivo">
-        <h3>About Me</h3>
+        <h3>About Me:</h3>
         <p>
             Hello There, meu nome é Jhordan, tenho 19 anos, gosto de Star Wars, jogos e da cultura nerd em geral.
             Atualmente faço o curso de Desenvolvedor Full Stack da Labenu e cursei o Ensino Médio integrado ao Técnico
-            em Informática no Instituto Federal de Educação, Ciência e Tecnologia do Piauí, campus São Raimundo Nonato
+            em Informática no Instituto Federal de Educação, Ciência e Tecnologia do Piauí, campus São Raimundo Nonato.
         </p>
     </div>
 
@@ -35,21 +35,30 @@
         </ul>
     </div>
 
-    <div class="container" id="habilidades">
-        <h3>Habilidade 1</h3>
-        <p>
-            Descrição da Habilidade
-        </p>
+    <div class="container" class="habilidades">
+        <div id="habilidade-1">
+            <h3>Habilidade 1</h3>
+            <p>
+                Descrição da Habilidade
+            </p>
+        </div>
     </div>
 
     <div class="container" id="projetos">
         <h2>Meus Projetos</h2>
 
-        <img src="imagens/img-para-projeto-vl-store.jpg" alt="Imagem de artigos tecnologicos">
-        <img src="imagens/img-blackjack.jpg" alt="Imagem do jogo Blackjack">
+        <table>
+            <tr>
+                <td> <img class="foto-projeto" src="imagens/img-para-projeto-vl-store.jpg" alt="Imagem de artigos tecnologicos"></td>
+                <td> <a id="link-loja-vl" href="">VL´s Store</a></td>
+            </tr>
 
-        <p>VL´s Store</p>
-        <p>BlackJack</p>
+            <tr>
+                <td> <img class="foto-projeto" src="imagens/img-blackjack.jpg" alt="Imagem do jogo Blackjack"></td>
+                <td><a id="link-blackjack" href="">BlackJack</a></td>
+            </tr>
+        </table>
+
     </div>
 
     <div id="pre-footer">
@@ -66,9 +75,13 @@
     </div>
 
     <footer>
-        <img id="imagem-facebook" src="https://image.flaticon.com/icons/png/512/25/25305.png"/>
-        <img id="imagem-instagram" src="https://image.flaticon.com/icons/png/512/25/25425.png"/>
-        <img id="imagem-twitter" src="https://image.flaticon.com/icons/png/512/8/8800.png"/>
+        <p>Feito por mim</p>
+
+        <div id="img-redes-sociais">
+            <img src="https://image.flaticon.com/icons/png/512/25/25305.png" />
+            <img src="https://image.flaticon.com/icons/png/512/25/25425.png" />
+            <img src="https://image.flaticon.com/icons/png/512/8/8800.png" />
+        </div>
     </footer>
 </body>
 
