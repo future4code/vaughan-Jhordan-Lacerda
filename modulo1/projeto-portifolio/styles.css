@@ -11,16 +11,32 @@ header {
     padding: 1%;
 }
 
+header > a {
+    border: 3px double;
+    color: black;
+    margin: 10px;
+    text-decoration: none;
+}
+
+header > a:hover {
+    color: white;
+}
+
+header > a:active {
+    color: rgb(201, 209, 190);
+}
+
 /* estilos dos container */
 .container {
     padding: 3%;
-    /* text-align: center; */
 }
 
 /* estilos do Sobre Mim */
 #texto-descritivo {
     text-align: justify;
     margin-top: 2%;
+    font-size: larger;
+    text-align: center;
 }
 
 #texto-descritivo > h3{
@@ -36,18 +52,19 @@ header {
 #lista-instituicao > img{
     padding: 50px;
     width: 150px;
-    height: 100px;
+    height: 140px;
 }
 
 #lista-instituicao > ul{
     text-align: left;
+    font-size: large;
 }
 
 /* estilos de habilidades */
 #habilidade-1 {
     display: inline-block;
     border:10px groove;
-    border-color: #0A1172;
+    border-color: #49AAAD;
 }
 
 /* estilos de Meus projetos */
@@ -55,11 +72,21 @@ header {
     width: 400px;
     height: 300px;
     padding: 40px 100px;
+    text-align: center;
 }
 
-/* estilos pré-footer */
-#pre-footer {
-    background-color: #52b2bf;
+#link-loja-vl {
+    position: relative;
+    right: 360px;
+    bottom: 10px;
+    font-size: 20px;
+}
+
+#link-blackjack {
+    position: relative;
+    right: 350px;
+    bottom: 10px;
+    font-size: 20px;
 }
 
 /* estilos footer */
@@ -69,7 +96,7 @@ footer {
 
 footer > p {
     text-align: center;
-    padding: 1%;
+    padding: 3%;
 }
 
 #img-redes-sociais {
