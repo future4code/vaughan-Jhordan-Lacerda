@@ -1,10 +1,12 @@
 /* Estilização do texto descritivo */
-p {
+.container > p {
     font-size: large;
 }
-
 /* Estilização da imagem do projeto */
 .container > img {
+    position: relative;
     width: 50%;
     height: 10%;
+    bottom: 80px;
+    left: 48%;
 }
