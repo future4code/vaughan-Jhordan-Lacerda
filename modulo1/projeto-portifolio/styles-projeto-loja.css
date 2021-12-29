@@ -1,0 +1,10 @@
+/* Estilização do texto descritivo */
+p {
+    font-size: large;
+}
+
+/* Estilização da imagem do projeto */
+.container > img {
+    width: 50%;
+    height: 10%;
+}
