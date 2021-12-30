@@ -1,0 +1,12 @@
+/* Estilização do texto descritivo */
+.container > p {
+    font-size: large;
+}
+
+/* Estilização do vídeo */
+.container > video {
+    position: relative;
+    width: 60%;
+    bottom: 80px;
+    left: 41%;
+}
