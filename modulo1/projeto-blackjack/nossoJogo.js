@@ -11,7 +11,7 @@
  * 
  */
 
-console.log("Boas vindas ao jogo de BlackJack!");
+alert("Boas vindas ao jogo de BlackJack!");
 
 if(confirm("Deseja iniciar uma nova rodada?")) {
    const cartaComprada = comprarCarta();
@@ -19,23 +19,23 @@ if(confirm("Deseja iniciar uma nova rodada?")) {
 
    const valorSomaCartasUser = cartaComprada.valor + cartaComprada2.valor;
    
-   console.log(`Usuário - cartas: ${cartaComprada.texto} ${cartaComprada2.texto} - pontuação ${valorSomaCartasUser}`);
+   alert(`Usuário - cartas: ${cartaComprada.texto} ${cartaComprada2.texto} - pontuação ${valorSomaCartasUser}`);
 
    const cartaCompradaBot = comprarCarta();
    const cartaCompradaBot2 = comprarCarta();
 
    const valorSomaCartasBot = cartaCompradaBot.valor + cartaCompradaBot2.valor;
 
-   console.log(`Computador - cartas: ${cartaCompradaBot.texto} ${cartaCompradaBot2.texto} - pontuação ${valorSomaCartasBot}`)
+   alert(`Computador - cartas: ${cartaCompradaBot.texto} ${cartaCompradaBot2.texto} - pontuação ${valorSomaCartasBot}`)
 
    if(valorSomaCartasUser > valorSomaCartasBot) {
-      console.log("O usuário ganhou!")
+      alert("O usuário ganhou!")
    } else if(valorSomaCartasBot > valorSomaCartasUser){
-      console.log("O computador ganhou!")
+      alert("O computador ganhou!")
    }else {
-      console.log("Empate")
+      alert("Empate")
    }
 
 } else {
-   console.log("O jogo acabou!")
+   alert("O jogo acabou!")
 }
