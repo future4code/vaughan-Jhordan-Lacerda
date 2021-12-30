@@ -5,8 +5,8 @@
 /* Estilização da imagem do projeto */
 .container > img {
     position: relative;
-    width: 50%;
-    height: 10%;
+    width: 60%;
+    height: 500px;
     bottom: 80px;
-    left: 48%;
+    left: 41%;
 }

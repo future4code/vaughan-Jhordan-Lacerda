@@ -7,6 +7,7 @@
 .container > video {
     position: relative;
     width: 60%;
+    height: 500px;
     bottom: 80px;
     left: 41%;
 }
