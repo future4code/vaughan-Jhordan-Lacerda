@@ -99,12 +99,17 @@ header > a:active {
     width: 400px;
     height: 300px;
     padding: 40px 100px;
-    text-align: center;
+}
+
+#fot-primeiro-projeto {
+    position: relative;
+    left: 80px;
+    bottom: 2px;
 }
 
 #link-loja-vl {
     position: relative;
-    right: 360px;
+    right: 280px;
     bottom: 10px;
     font-size: 20px;
 }
