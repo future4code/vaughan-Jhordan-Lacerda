@@ -72,6 +72,11 @@ header > a:active {
     font-size: larger;
 }
 
+.habilidades >h3, ul {
+    position: relative;
+    top: 25px;
+}
+
 #h2-habilidades {
     text-align: center;
     padding-bottom: 5%;
