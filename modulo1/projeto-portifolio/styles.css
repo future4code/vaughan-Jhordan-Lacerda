@@ -141,4 +141,12 @@ footer > p {
 }
 #img-redes-sociais img{
     width: 2%;
+    padding: 10px;
+}
+
+#img-redes-sociais p{
+    font-size: larger;
+    position: relative;
+    right: 14%;
+    top: 36px;
 }
