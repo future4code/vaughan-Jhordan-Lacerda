@@ -3,11 +3,25 @@
     font-size: larger;
 }
 
+/* Estilização do li */
+.container > ul > li {
+    position: relative;
+    left: 25px;
+}
+
 /* Estilização do vídeo */
 .container > video {
     position: relative;
     width: 60%;
     height: 500px;
-    bottom: 80px;
+    bottom: 140px;
     left: 41%;
+}
+
+/* Estilização do footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 0;
 }
