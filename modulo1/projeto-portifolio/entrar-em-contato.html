@@ -18,14 +18,22 @@
     </header>
 
     <div class="container">
-        <label for="nome">Nome:</label>
-        <input type="text" name="Nome" id="nome">
+        <form>
+            <p>
+                <input type="text" name="Nome" placeholder="Nome" id="nome">
+            </p>
+            
+            <p>
+                <input type="email" name="E-mail" placeholder="E-mail" id="email">
+            </p>
+            
+            <p>
+                <textarea name="mensagem" placeholder="Mensagem" id="mensagem"></textarea>
+            </p>
+        
+            <button type="submit">Enviar</button>
+        </form>
 
-        <label for="email">E-mail:</label>
-        <input type="email" name="E-mail" id="email">
-
-        <label id="mensagem">Mensagem:</label>
-        <textarea name="mensagem" id="mensagem" ></textarea>
     </div>
 
     <footer>
