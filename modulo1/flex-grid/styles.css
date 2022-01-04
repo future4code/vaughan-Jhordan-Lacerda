@@ -45,14 +45,21 @@ main {
     display: grid;
     background-color: #f2d0e0;
     flex-grow: 1;
+    width: 13vw;
 
     grid-template-rows: 32px 32px 32px 32px;
     grid-template-columns: 35px 40px 50px;
+
+    padding: 10px;
 }
 
 #menu > img {
     width: 20px;
+}
+
+.icones-gerais {
     margin-left: 15px;
+    
 }
 
 #menu > p {
@@ -60,11 +67,23 @@ main {
 }
 
 .icone-seta {
-    margin-left: 100px;
+    margin-left: 11vw;
 }
 
 #conteudo {
     flex-grow: 8;
+    display: grid;
+    padding: 20px;
+
+    grid-template-rows: 100px 200px;
+    grid-template-columns: 180px 180px 180px 180px;
+    
+    column-gap: 10px;
+    row-gap: 100px;
+}
+
+#conteudo > img{
+    width: 11vw;
 }
 
 footer {
