@@ -1,0 +1,34 @@
+input {
+    padding: 10px;
+    width: 250px;
+    margin-right: 35px;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 1fr;
+    margin: 0 50px 100px 50px;
+
+}
+
+h2 {
+    justify-self: start;
+}
+
+video {
+    width: 100%;
+    justify-self: center;
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+
+    input {
+        width: 100px;
+    }
+
+    main {
+        max-width: 300px;
+    }
+    
+}
