@@ -1,0 +1,28 @@
+/* Estilização do texto descritivo */
+.container > p {
+    font-size: large;
+    width: 550px;
+}
+
+/* Estilização do li */
+.container > ul > li {
+    position: relative;
+    left: 25px;
+}
+
+/* Estilização da imagem do projeto */
+.container > img {
+    position: relative;
+    width: 60%;
+    height: 500px;
+    bottom: 145px;
+    left: 41%;
+}
+
+/* Estilização do footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 0;
+}

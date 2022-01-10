@@ -1,0 +1,152 @@
+/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* estilos do cabeçalho */
+header {
+    text-align: right;
+    background-color: #49AAAD;
+    padding: 1%;
+}
+
+header > a {
+    border: 3px double;
+    color: black;
+    margin: 10px;
+    text-decoration: none;
+}
+
+header > a:hover {
+    color: white;
+}
+
+header > a:active {
+    color: rgb(201, 209, 190);
+}
+
+/* estilos dos container */
+.container {
+    padding: 3%;
+}
+
+/* estilos do Sobre Mim */
+#texto-descritivo {
+    text-align: justify;
+    margin-top: 2%;
+    font-size: larger;
+    text-align: center;
+}
+
+#texto-descritivo > h3{
+    text-align: left;
+    padding: 15px;
+}
+
+/* estilos das instituições frequentadas */
+#lista-instituicao {
+    text-align: center;
+}
+
+#lista-instituicao > img{
+    padding: 50px;
+    width: 150px;
+    height: 140px;
+}
+
+#lista-instituicao > ul{
+    text-align: left;
+    font-size: large;
+}
+
+/* estilos de habilidades */
+.habilidades {
+    display: inline-block;
+    border:10px groove;
+    border-color: #49AAAD;
+    width: 20%;
+    height: 30vh;
+    padding: 1%;
+    text-align: center;
+    font-size: larger;
+}
+
+.habilidades >h3, ul {
+    position: relative;
+    top: 25px;
+}
+
+#h2-habilidades {
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+#habilidade-1 {
+    position: relative;
+    left: 110px;
+}
+
+#habilidade-2 {
+    position: relative;
+    bottom: 45px;
+    left: 200px;
+}
+
+#habilidade-3 {
+    position: relative;
+    bottom: 45px;
+    left: 300px;
+}
+
+/* estilos de Meus projetos */
+.foto-projeto {
+    width: 400px;
+    height: 300px;
+    padding: 40px 100px;
+}
+
+#fot-primeiro-projeto {
+    position: relative;
+    left: 80px;
+    bottom: 2px;
+}
+
+#link-loja-vl {
+    position: relative;
+    right: 280px;
+    bottom: 10px;
+    font-size: 20px;
+}
+
+#link-blackjack {
+    position: relative;
+    right: 350px;
+    bottom: 10px;
+    font-size: 20px;
+}
+
+/* estilos footer */
+footer {
+    background-color: #49AAAD;
+}
+
+footer > p {
+    text-align: center;
+    padding: 1%;
+}
+
+#img-redes-sociais {
+    text-align: right;
+}
+#img-redes-sociais img{
+    width: 2%;
+    padding: 10px;
+}
+
+#img-redes-sociais p{
+    font-size: larger;
+    position: relative;
+    right: 14%;
+    top: 36px;
+}
