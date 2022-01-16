@@ -2,10 +2,10 @@ import react from "react";
 import styled from "styled-components";
 
 const Feed = styled.div`
-  display: flex;
   min-width: 600px;
   height: 100vh;
   border: 1px solid black;
+  display: flex;
   flex-direction: column;
   justify-content: flex-end;
 `;
@@ -28,13 +28,13 @@ const Inputs = styled.div`
 const InputNome = styled.input`
   display: flex;
   flex-grow: 2;
-  max-height: 16px;
+  max-height: 20px;
 `;
 
 const InputMensagem = styled.input`
   display: flex;
   flex-grow: 10;
-  max-height: 16px;
+  max-height: 20px;
 `;
 
 class EnviarMensagem extends react.Component {
@@ -58,6 +58,7 @@ class EnviarMensagem extends react.Component {
     const adicionarMensagem = [novaMensagem, ...this.state.infoMensagem];
 
     this.setState({ infoMensagem: adicionarMensagem });
+    this.setState({ valorInputMensagem: "" });
   };
 
   onChangeInputNome = (event) => {

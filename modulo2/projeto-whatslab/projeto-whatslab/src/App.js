@@ -1,10 +1,10 @@
 import styled from "styled-components";
+import './index.css';
 import EnviarMensagem from "./componentes/EnviarMensagem";
 
 const Div = styled.div`
   display: flex;
   justify-content: center;
-  box-sizing: border-box;
 `;
 
 function App() {
