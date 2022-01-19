@@ -22,31 +22,83 @@ class App extends React.Component {
   state = {
     tarefas: [
       {
-        id: Date.now(),
-        texto: "Texto da tarefa",
-        completa: false
+        id: 1,
+        texto: "Tirar poeira das coisas",
+        completa: false,
       },
       {
-        id: Date.now(),
+        id: 2,
         texto: "Estudar",
-        completa: true
-      }
+        completa: true,
+      },
     ],
     inputValue: "",
-    filtro: "pendentes",
+    filtro: "",
   };
 
-  componentDidUpdate() {}
+  componentDidUpdate(prevProps, prevState) {
+    if(prevState.id !== this.state.id) {
+      localStorage.setItem("id", this.state.id);
+      console.log("Salvei o id");
+    }
 
-  componentDidMount() {}
+    if(prevState.texto !== this.state.texto){
+      localStorage.setItem("texto", this.state.texto);
+      console.log("Salvei o texto");
+    }
 
-  onChangeInput = (event) => {};
+    if(prevState.completa !== this.state.completa){
+      localStorage.setItem("completa", this.state.completa);
+      console.log("Salvei o completa");
+    }
+  }
 
-  criaTarefa = () => {};
+  componentDidMount() {
+    this.selectTarefa();
+    const idLS = localStorage.getItem("id")
+    const textoLS = localStorage.getItem("texto")
+    const completaLS = localStorage.getItem("completa")
 
-  selectTarefa = (id) => {};
+    this.setState({id: idLS, texto: textoLS, completa: completaLS})
+  }
 
-  onChangeFilter = (event) => {};
+  onChangeInput = (event) => {
+    this.setState({ inputValue: event.target.value });
+  };
+
+  criaTarefa = () => {
+    const novaTarefa = {
+      id: Date.now(),
+      texto: this.state.inputValue,
+      completa: false,
+    };
+
+    const novaLista = [...this.state.tarefas, novaTarefa];
+
+    localStorage.setItem("historicoMensagens" , JSON.stringify(novaLista));
+
+    this.setState({ tarefas: novaLista });
+  };
+
+  selectTarefa = (id) => {
+    const novaListaTarefa = this.state.tarefas.map((tarefa) => {
+      if (id === tarefa.id) {
+        const novaTarefa = {
+          ...tarefa,
+          completa: !tarefa.completa,
+        };
+        return novaTarefa;
+      } else {
+        return tarefa;
+      }
+    });
+    JSON.parse(localStorage.getItem("historicoMensagens"))
+    this.setState({ tarefas: novaListaTarefa });
+  };
+
+  onChangeFilter = (event) => {
+    this.setState({ filtro: event.target.value });
+  };
 
   render() {
     const listaFiltrada = this.state.tarefas.filter((tarefa) => {
