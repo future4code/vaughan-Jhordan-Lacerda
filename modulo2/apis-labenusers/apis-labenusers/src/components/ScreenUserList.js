@@ -43,7 +43,10 @@ export default class ScreenUserList extends react.Component {
       headers: { Authorization: "jhordan-lacerda-vaughan" },
     };
 
-    axios
+    const message = window.confirm("Tem certeza que deseja deletar esse usuário?");
+
+    if(message) {
+      axios
       .delete(url, axiosConfig)
       .then((res) => {
         alert("Usuário(a) excluído(a) com sucesso!")
@@ -52,13 +55,16 @@ export default class ScreenUserList extends react.Component {
       .catch((err) => {
         alert("Ocorreu um erro, tente novamente!")
       });
+    }else {
+      alert("Ainda bem que não deletou ele.")
+    }
   };
 
   render() {
     const userList = this.state.users.map((user) => {
       return (
         <UserCard key={user.id}>
-          {user.name}
+          <button onClick={this.props.goToDetails}>{user.name}</button>
           <button onClick={() => this.deleteUser(user.id)}>X</button>
         </UserCard>
       );
