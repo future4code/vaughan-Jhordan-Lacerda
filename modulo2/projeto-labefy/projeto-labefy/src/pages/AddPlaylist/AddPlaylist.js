@@ -1,5 +1,6 @@
 import react from "react";
 import axios from "axios";
+import { AddPlaylistCard, ButtonSpace } from "./styled";
 
 export default class addPlaylist extends react.Component {
   state = {
@@ -32,7 +33,7 @@ export default class addPlaylist extends react.Component {
 
   render() {
     return (
-      <div>
+      <AddPlaylistCard>
         <h3>Adicionar Playlist</h3>
 
         <input
@@ -41,9 +42,9 @@ export default class addPlaylist extends react.Component {
           onChange={this.handleInputPlaylist}
         />
 
-        <button onClick={this.addPlaylist}>Adicionar Playlist</button>
-        <button onClick={this.props.goToShowPlaylists}>Mostrar playlists</button>
-      </div>
+        <ButtonSpace onClick={this.addPlaylist}>Adicionar Playlist</ButtonSpace>
+        <ButtonSpace onClick={this.props.goToShowPlaylists}>Mostrar playlists</ButtonSpace>
+      </AddPlaylistCard>
     );
   }
 }

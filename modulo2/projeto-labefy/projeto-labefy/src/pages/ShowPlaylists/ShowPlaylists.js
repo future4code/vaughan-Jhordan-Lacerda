@@ -1,5 +1,6 @@
 import react from "react";
 import axios from "axios";
+import { ListCard, PlaylistCard } from "./styled";
 
 export default class ShowPlaylists extends react.Component {
   state = {
@@ -20,7 +21,6 @@ export default class ShowPlaylists extends react.Component {
     axios
       .get(url, axiosConfig)
       .then((res) => {
-        console.log(res);
         this.setState({ playlists: res.data.result.list });
       })
       .catch((err) => {
@@ -56,18 +56,21 @@ export default class ShowPlaylists extends react.Component {
   render() {
     const listPlaylist = this.state.playlists.map((playlist) => {
       return (
-        <div key={playlist.id}>
+        <PlaylistCard key={playlist.id} onClick={() => this.props.goToDetails(playlist.id)}>
           <p>{playlist.name}</p>
           <button onClick={() => this.deletePlaylist(playlist.id)}>X</button>
-        </div>
+        </PlaylistCard>
       );
     });
 
     return (
-      <div>
+      <ListCard>
         <h3>Lista de Playlists</h3>
         {listPlaylist}
-      </div>
+        <button onClick={this.props.goToAddPlaylist}>
+          Voltar para página de adicionar playlist
+        </button>
+      </ListCard>
     );
   }
 }
