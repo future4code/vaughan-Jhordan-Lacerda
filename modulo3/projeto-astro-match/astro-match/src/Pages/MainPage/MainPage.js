@@ -1,12 +1,15 @@
-import react from "react";
+import react, { useState } from "react";
 import axios from "axios";
-import logo from "../../Assets/img/logoAstroMatch.png"
+import AppBar from "../../Components/AppBar/AppBar";
+import ChooseProfilePage from "../../Components/ChooseProfilePage/ChooseProfilePage";
+import { BASE_URL } from "../../Constants/urls";
 
-export default function MainPage() {
-    return(
-        <div>
-            <img src={logo} />
+export default function MainPage(props) {
 
-        </div>
-    )
+  return (
+    <div>
+      <AppBar changePage={props.changePage} />
+      <ChooseProfilePage />
+    </div>
+  );
 }
