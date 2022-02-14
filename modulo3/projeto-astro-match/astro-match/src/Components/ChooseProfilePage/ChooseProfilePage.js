@@ -12,11 +12,12 @@ export default function ChooseProfilePage() {
   }, []);
 
   const getProfileToChoose = () => {
-    const url = `${BASE_URL}/:jhorda/person `;
+    const url = `${BASE_URL}/:jhordan/person`;
+
     axios
       .get(url)
       .then((res) => {
-        console.log("alo", res.data.profile);
+        console.log(res.data)
         setProfile(res.data.profile);
       })
       .catch((err) => {
@@ -24,10 +25,45 @@ export default function ChooseProfilePage() {
       });
   };
 
+  const ChoosePerson = (decision) => {
+    const url = `${BASE_URL}/:jhordan/choose-person`;
+    if (decision) {
+      const body = {
+        id: profile.id,
+        choice: true,
+      };
+
+      axios
+        .post(url, body)
+        .then((res) => {
+          console.log(res.data);
+          getProfileToChoose();
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    } else {
+      const body = {
+        id: profile.id,
+        choice: false,
+      };
+
+      axios
+        .post(url, body)
+        .then((res) => {
+          console.log(res.data);
+          getProfileToChoose();
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    }
+  };
+  
   return (
     <>
       <ProfileCard profile={profile} />
-      <ChooseButtons />
+      <ChooseButtons ChoosePerson={ChoosePerson} />
     </>
   );
 }
