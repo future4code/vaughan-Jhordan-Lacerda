@@ -1,11 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+import { Router } from "./Router/Router"
 
 function App() {
   return (
-    <div>
-      <p>Projeto</p>
-    </div>
+    <Router/>
   );
 }
 
