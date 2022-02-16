@@ -1,8 +1,15 @@
-import react from "react";
+import axios from "axios";
+import react, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../../constants/urls";
 
 export default function AdminHomePage() {
   const navigate = useNavigate();
+  const [tripList, setTripList] = useState([]);
+
+  useEffect(() => {
+    getTrips();
+  }, []);
 
   const goToHomePage = () => {
     navigate("/");
@@ -13,8 +20,25 @@ export default function AdminHomePage() {
   };
 
   const goToTripDetailsPage = () => {
-      navigate("/admin/trips/:id")
-  }
+    navigate("/admin/trips/:id");
+  };
+
+  const getTrips = () => {
+    const url = `${BASE_URL}/trips`;
+
+    axios
+      .get(url)
+      .then((res) => {
+        setTripList(res.data.trips);
+      })
+      .catch((err) => {
+        console.log(err.response);
+      });
+  };
+
+  const listTrip = tripList.map((trip) => {
+    return <p key={trip.id} onClick={goToTripDetailsPage}>{trip.name}</p>;
+  });
 
   return (
     <div>
@@ -22,7 +46,7 @@ export default function AdminHomePage() {
       <button onClick={goToHomePage}>Voltar</button>
       <button onClick={goToCreateTripPage}>Criar Viagem</button>
       <button>Logout</button>
-      <p onClick={goToTripDetailsPage}>Lista de Viagens</p>
+      <div>{listTrip}</div>
     </div>
   );
 }
