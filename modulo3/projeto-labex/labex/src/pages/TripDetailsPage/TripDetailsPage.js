@@ -12,7 +12,7 @@ export default function TripDetailsPage() {
   UseProtectedPage();
 
   useEffect(() => {
-    getTripDetail("HGLbkB8YxJyOEKO702mq");
+    getTripDetail();
   }, []);
 
   const goToAdminHomePage = () => {

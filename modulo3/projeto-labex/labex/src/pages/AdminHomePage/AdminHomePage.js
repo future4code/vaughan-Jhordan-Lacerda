@@ -2,7 +2,7 @@ import axios from "axios";
 import react, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../constants/urls";
-import {UseProtectedPage} from "../../Hook/UseProtectedPage";
+import { UseProtectedPage } from "../../Hook/UseProtectedPage";
 
 export default function AdminHomePage() {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ export default function AdminHomePage() {
   };
 
   const goToTripDetailsPage = (id) => {
-    navigate(`/admin/trips/${id}`)
+    navigate(`/admin/trips/${id}`);
   };
 
   const getTrips = () => {
@@ -40,7 +40,11 @@ export default function AdminHomePage() {
   };
 
   const listTrip = tripList.map((trip) => {
-    return <p key={trip.id} onClick={() => goToTripDetailsPage(trip.id)}>{trip.name}</p>;
+    return (
+      <p key={trip.id} onClick={() => goToTripDetailsPage(trip.id)}>
+        {trip.name}
+      </p>
+    );
   });
 
   return (

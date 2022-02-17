@@ -8,8 +8,8 @@ export default function CreateTripPage() {
   UseProtectedPage();
 
   const goToAdminHomePage = () => {
-      navigate("/admin/trips/list")
-  }
+    navigate("/admin/trips/list");
+  };
 
   return (
     <div>
