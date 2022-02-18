@@ -15,6 +15,7 @@ export default function ApplicationFormPage() {
     profession: "",
     country: "",
   });
+  const [idViagem, setIdViagem] = useState("");
 
   useEffect(() => {
     getTrips();
@@ -39,7 +40,7 @@ export default function ApplicationFormPage() {
 
   const applyToTrip = (event) => {
     event.preventDefault();
-    const url = `${BASE_URL}/trips/HGLbkB8YxJyOEKO702mq/apply`;
+    const url = `${BASE_URL}/trips/${idViagem}/apply`;
 
     axios
       .post(url, form)
@@ -51,6 +52,10 @@ export default function ApplicationFormPage() {
       });
   };
 
+  const handleId = (e) => {
+    setIdViagem(e.target.value)
+  }
+
   const optionTrips = tripList.map((trip) => {
     return (
       <option key={trip.id} value={trip.id}>
@@ -59,11 +64,13 @@ export default function ApplicationFormPage() {
     );
   });
 
+  console.log(idViagem)
+
   return (
     <div>
       <h1>Inscreva-se para uma viagem</h1>
       <form onSubmit={applyToTrip}>
-        <select>
+        <select onChange={handleId}>
           <option value="">Selecione a viagem</option>
           {optionTrips}
         </select>
