@@ -6,7 +6,7 @@ import { UseProtectedPage } from "../../Hook/UseProtectedPage";
 
 export default function TripDetailsPage() {
   const [trip, setTrip] = useState({});
-  const [candidates, setCandidates] = useState([])
+  const [candidates, setCandidates] = useState([]);
   const navigate = useNavigate();
   const params = useParams();
 
@@ -14,7 +14,7 @@ export default function TripDetailsPage() {
 
   useEffect(() => {
     getTripDetail();
-  }, []);
+  }, [candidates]);
 
   const goToAdminHomePage = () => {
     navigate("/admin/trips/list");
@@ -30,25 +30,67 @@ export default function TripDetailsPage() {
       .get(url, axiosConfig)
       .then((res) => {
         setTrip(res.data.trip);
-        setCandidates(res.data.trip.candidates)
+        setCandidates(res.data.trip.candidates);
       })
       .catch((err) => {
         console.log(err.response);
       });
   };
 
-  console.log(candidates)
-
-  const decideCandidate = () => {
+  const decideCandidate = (condition, id) => {
     const token = localStorage.getItem("token");
 
-    const url = `${BASE_URL}/trip/${params.id}/candidates/:candidateId/decide`
+    const url = `${BASE_URL}/trips/${params.id}/candidates/${id}/decide`;
     const axiosConfig = { headers: { auth: token } };
-  }
+
+    if (condition) {
+      const body = {
+        approve: true,
+      };
+
+      axios
+        .put(url, body, axiosConfig)
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((err) => {
+          console.log(err.response);
+        });
+    } else {
+      const body = {
+        approve: false,
+      };
+
+      axios
+        .put(url, body, axiosConfig)
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((err) => {
+          console.log(err.response);
+        });
+    }
+  };
 
   const listCandidates = candidates.map((candidate) => {
-    return <li key={candidate.id}>{candidate.name}</li>
-  })
+    return (
+      <div key={candidate.id}>
+        <p>Nome: {candidate.name}</p>
+        <p>Profissão: {candidate.profession}</p>
+        <p>Idade: {candidate.age}</p>
+        <p>País: {candidate.country}</p>
+        <p>Texto de Candidatura: {candidate.applicationText}</p>
+        <div>
+          <button onClick={() => decideCandidate(true, candidate.id)}>
+            Aprovar
+          </button>
+          <button onClick={() => decideCandidate(false, candidate.id)}>
+            Reprovar
+          </button>
+        </div>
+      </div>
+    );
+  });
 
   return (
     <div>
@@ -62,10 +104,7 @@ export default function TripDetailsPage() {
       <button onClick={goToAdminHomePage}>Voltar</button>
 
       <h2>Candidatos Pendentes</h2>
-      <ul>{listCandidates}</ul>
-
-      <button>Aprovar</button>
-      <button>Reprovar</button>
+      {listCandidates}
 
       <h2>Candidatos Aprovados</h2>
       <ul>
