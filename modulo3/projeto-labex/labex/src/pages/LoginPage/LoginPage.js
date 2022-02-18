@@ -5,7 +5,7 @@ import { BASE_URL } from "../../constants/urls";
 import useForm from "../../Hook/useForm";
 
 export default function LoginPage() {
-  const { form, onChange, cleanFields } = useForm({
+  const { form, onChange} = useForm({
     email: "",
     password: "",
   });

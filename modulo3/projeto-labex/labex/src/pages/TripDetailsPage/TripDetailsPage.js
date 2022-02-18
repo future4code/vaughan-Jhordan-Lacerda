@@ -6,6 +6,7 @@ import { UseProtectedPage } from "../../Hook/UseProtectedPage";
 
 export default function TripDetailsPage() {
   const [trip, setTrip] = useState({});
+  const [candidates, setCandidates] = useState([])
   const navigate = useNavigate();
   const params = useParams();
 
@@ -29,11 +30,25 @@ export default function TripDetailsPage() {
       .get(url, axiosConfig)
       .then((res) => {
         setTrip(res.data.trip);
+        setCandidates(res.data.trip.candidates)
       })
       .catch((err) => {
         console.log(err.response);
       });
   };
+
+  console.log(candidates)
+
+  const decideCandidate = () => {
+    const token = localStorage.getItem("token");
+
+    const url = `${BASE_URL}/trip/${params.id}/candidates/:candidateId/decide`
+    const axiosConfig = { headers: { auth: token } };
+  }
+
+  const listCandidates = candidates.map((candidate) => {
+    return <li key={candidate.id}>{candidate.name}</li>
+  })
 
   return (
     <div>
@@ -47,7 +62,8 @@ export default function TripDetailsPage() {
       <button onClick={goToAdminHomePage}>Voltar</button>
 
       <h2>Candidatos Pendentes</h2>
-      <p>card com as informações do candidato</p>
+      <ul>{listCandidates}</ul>
+
       <button>Aprovar</button>
       <button>Reprovar</button>
 

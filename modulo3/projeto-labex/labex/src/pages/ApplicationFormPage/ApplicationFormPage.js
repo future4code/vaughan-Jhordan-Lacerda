@@ -1,20 +1,110 @@
-import react from "react";
+import axios from "axios";
+import react, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import SelectCountry from "../../components/SelectCountry";
+import { BASE_URL } from "../../constants/urls";
+import useForm from "../../Hook/useForm";
 
 export default function ApplicationFormPage() {
-    const navigate = useNavigate()
+  const [tripList, setTripList] = useState([]);
+  const navigate = useNavigate();
+  const { form, onChange, cleanFields } = useForm({
+    name: "",
+    age: "",
+    applicationText: "",
+    profession: "",
+    country: "",
+  });
 
-    const goToListTripPage = () => {
-        navigate("/trips/list")
-    }
+  useEffect(() => {
+    getTrips();
+  }, []);
 
+  const goToListTripPage = () => {
+    navigate("/trips/list");
+  };
+
+  const getTrips = () => {
+    const url = `${BASE_URL}/trips`;
+
+    axios
+      .get(url)
+      .then((res) => {
+        setTripList(res.data.trips);
+      })
+      .catch((err) => {
+        console.log(err.response);
+      });
+  };
+
+  const applyToTrip = (event) => {
+    event.preventDefault();
+    const url = `${BASE_URL}/trips/HGLbkB8YxJyOEKO702mq/apply`;
+
+    axios
+      .post(url, form)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err.response);
+      });
+  };
+
+  const optionTrips = tripList.map((trip) => {
     return (
-        <div>
-            <p>ApplicationFormPage</p>
-            <p>Inscreva-se para uma viagem</p>
-            <button onClick={goToListTripPage}>Voltar</button>
-            <button>Enviar</button>
-        </div>
-        
-    )
+      <option key={trip.id} value={trip.id}>
+        {trip.name}
+      </option>
+    );
+  });
+
+  return (
+    <div>
+      <h1>Inscreva-se para uma viagem</h1>
+      <form onSubmit={applyToTrip}>
+        <select>
+          <option value="">Selecione a viagem</option>
+          {optionTrips}
+        </select>
+        <input
+          name={"name"}
+          placeholder="Nome"
+          value={form.name}
+          onChange={onChange}
+          required
+        />
+        <input
+          name={"age"}
+          placeholder="Idade"
+          value={form.age}
+          onChange={onChange}
+          type={"number"}
+          required
+        />
+        <input
+          name={"applicationText"}
+          placeholder="Texto de candidatura"
+          value={form.applicationText}
+          onChange={onChange}
+          required
+        />
+        <input
+          name={"profession"}
+          placeholder="Profissão"
+          value={form.profession}
+          onChange={onChange}
+          required
+        />
+        <SelectCountry
+          name={"country"}
+          value={form.country}
+          onChange={onChange}
+          required
+        />
+        <button>Enviar</button>
+        <button onClick={goToListTripPage}>Voltar</button>
+      </form>
+    </div>
+  );
 }
