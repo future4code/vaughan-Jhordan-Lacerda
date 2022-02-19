@@ -12,7 +12,7 @@ export default function AdminHomePage() {
 
   useEffect(() => {
     getTrips();
-  }, []);
+  }, [tripList]);
 
   const goToHomePage = () => {
     navigate("/");
@@ -39,13 +39,30 @@ export default function AdminHomePage() {
       });
   };
 
+  const deleteTrip = (id) => {
+    const token = localStorage.getItem("token");
+    const url = `${BASE_URL}/trips/${id}`;
+    const axiosConfig = { headers: { auth: token } };
+
+    axios
+      .delete(url, axiosConfig)
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err.response));
+  };
+
   const listTrip = tripList.map((trip) => {
     return (
-      <p key={trip.id} onClick={() => goToTripDetailsPage(trip.id)}>
-        {trip.name}
-      </p>
+      <div key={trip.id}>
+        <div onClick={() => goToTripDetailsPage(trip.id)}>{trip.name}</div>
+
+        <div>
+          <button onClick={() => deleteTrip(trip.id)}>X</button>
+        </div>
+      </div>
     );
   });
+
+  
 
   return (
     <div>

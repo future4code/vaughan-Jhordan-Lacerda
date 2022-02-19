@@ -37,9 +37,7 @@ export default function CreateTripPage() {
         console.log(err.response);
       });
   };
-
-  console.log(form)
-
+  
   return (
     <div>
       <h1>Criar Viagem</h1>
@@ -51,10 +49,7 @@ export default function CreateTripPage() {
           onChange={onChange}
           required
         />
-        <select
-        name={"planet"}
-        value={form.planet} 
-        onChange={onChange}>
+        <select name={"planet"} value={form.planet} onChange={onChange}>
           <option value="" disabled="" selected="">
             Escolha um planeta
           </option>
@@ -93,7 +88,6 @@ export default function CreateTripPage() {
       </form>
 
       <button onClick={goToAdminHomePage}>Voltar</button>
-      
     </div>
   );
 }
