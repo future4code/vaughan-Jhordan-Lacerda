@@ -62,14 +62,17 @@ export default function AdminHomePage() {
     );
   });
 
-  
+  const logout = () => {
+    localStorage.setItem("token", "");
+    window.location.reload()
+  }
 
   return (
     <div>
       <h1>Painel Administrativo</h1>
       <button onClick={goToHomePage}>Voltar</button>
       <button onClick={goToCreateTripPage}>Criar Viagem</button>
-      <button>Logout</button>
+      <button onClick={logout}>Logout</button>
       <div>{listTrip}</div>
     </div>
   );

@@ -7,8 +7,8 @@ export const UseProtectedPage = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    if (token === null) {
-      alert("Não está logado!");
+    if (token === null || token === "") {
+      alert("Você deslogou ou não está logado!");
       navigate("/login");
     }
   }, []);
