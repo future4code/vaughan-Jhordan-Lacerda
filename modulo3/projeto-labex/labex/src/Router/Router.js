@@ -6,6 +6,8 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import AdminHomePage from "../pages/AdminHomePage/AdminHomePage";
 import TripDetailsPage from "../pages/TripDetailsPage/TripDetailsPage";
 import CreateTripPage from "../pages/CreateTripPage/CreateTripPage";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
+
 
 export function Router() {
   return (
@@ -18,6 +20,7 @@ export function Router() {
         <Route exact path="/admin/trips/list" element={<AdminHomePage />} />
         <Route exact path="/admin/trips/:id" element={<TripDetailsPage />} />
         <Route exact path="/admin/trips/create" element={<CreateTripPage />} />
+        <Route exact path="*" element={<ErrorPage/>} />
       </Routes>
     </BrowserRouter>
   );
