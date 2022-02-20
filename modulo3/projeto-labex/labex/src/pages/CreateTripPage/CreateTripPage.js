@@ -31,10 +31,10 @@ export default function CreateTripPage() {
     axios
       .post(url, form, axiosConfig)
       .then((res) => {
-        console.log(res.data);
+        alert("Viagem criada com sucesso!")
       })
       .catch((err) => {
-        console.log(err.response);
+        alert(err.response.data.message);
       });
   };
   
@@ -47,9 +47,11 @@ export default function CreateTripPage() {
           name={"name"}
           value={form.name}
           onChange={onChange}
+          pattern={"^.{5,}"}
+          title="Você deve inserir, no mínimo 5 letras"
           required
         />
-        <select name={"planet"} value={form.planet} onChange={onChange}>
+        <select name={"planet"} value={form.planet} onChange={onChange} required>
           <option value="" disabled="" selected="">
             Escolha um planeta
           </option>
@@ -74,6 +76,8 @@ export default function CreateTripPage() {
           name={"description"}
           value={form.description}
           onChange={onChange}
+          pattern={"^.{30,}"}
+          title="Você deve inserir, no mínimo 30 letras"
           required
         />
         <input
@@ -81,6 +85,8 @@ export default function CreateTripPage() {
           name={"durationInDays"}
           value={form.durationInDays}
           onChange={onChange}
+          min="50"
+          title="Você deve inserir, no mínimo 5 letras"
           required
           type="number"
         />
