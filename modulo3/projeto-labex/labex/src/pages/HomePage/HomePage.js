@@ -1,5 +1,8 @@
 import react from "react";
 import { useNavigate } from "react-router-dom";
+import { CenterDiv, SpaceButtons, H1Resized } from "./styled";
+import { ChakraProvider } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -8,15 +11,21 @@ export default function HomePage() {
     navigate("/trips/list");
   };
 
-  const goToLoginPage = () => {
-    navigate("/login");
+  const goToAdminPage = () => {
+    navigate("/admin/trips/list");
   };
 
   return (
-    <div>
-      <p>Home Page</p>
-      <button onClick={goToListTripPage}>Ver viagens</button>
-      <button onClick={goToLoginPage}>Área de Admin</button>
-    </div>
+    <ChakraProvider>
+      <CenterDiv>
+        <H1Resized>LabeX</H1Resized>
+        <SpaceButtons>
+          <Button colorScheme="teal" onClick={goToListTripPage}>
+          Ver viagens
+          </Button>
+          <Button colorScheme="teal" onClick={goToAdminPage}>Área de Admin</Button>
+        </SpaceButtons>
+      </CenterDiv>
+    </ChakraProvider>
   );
 }

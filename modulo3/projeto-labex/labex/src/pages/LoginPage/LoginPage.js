@@ -3,9 +3,12 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../../constants/urls";
 import useForm from "../../Hook/useForm";
+import { BigH1, DivContainer, SpaceButtons } from "./styled";
+import { Button, ChakraProvider, Input, Stack } from "@chakra-ui/react";
+import { FormColumn } from "../ApplicationFormPage/styled";
 
 export default function LoginPage() {
-  const { form, onChange} = useForm({
+  const { form, onChange } = useForm({
     email: "",
     password: "",
   });
@@ -34,28 +37,39 @@ export default function LoginPage() {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={onSubmitLogin}>
-        <input
-          name={"email"}
-          placeholder="E-mail"
-          value={form.email}
-          onChange={onChange}
-          required
-          type={"email"}
-        />
-        <input
-          name={"password"}
-          placeholder="Senha"
-          type={"password"}
-          value={form.password}
-          onChange={onChange}
-          required
-        />
-        <button onClick={goBack}>Voltar</button>
-        <button>Entrar</button>
-      </form>
-    </div>
+    <DivContainer>
+      <ChakraProvider>
+        <BigH1>Login</BigH1>
+        <FormColumn onSubmit={onSubmitLogin}>
+          <Stack spacing={2}>
+            <Input
+              name={"email"}
+              placeholder="E-mail"
+              value={form.email}
+              onChange={onChange}
+              required
+              type={"email"}
+            />
+            <Input
+              name={"password"}
+              placeholder="Senha"
+              type={"password"}
+              value={form.password}
+              onChange={onChange}
+              required
+            />
+          </Stack>
+
+          <SpaceButtons>
+            <Button colorScheme="teal" onClick={goBack}>
+              Voltar
+            </Button>
+            <Button colorScheme="teal" onClick={onSubmitLogin}>
+              Entrar
+            </Button>
+          </SpaceButtons>
+        </FormColumn>
+      </ChakraProvider>
+    </DivContainer>
   );
 }

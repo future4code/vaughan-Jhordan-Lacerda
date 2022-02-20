@@ -2,6 +2,11 @@ import axios from "axios";
 import react, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../constants/urls";
+import { ChakraProvider } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
+import { BigH1, CenterDiv } from "../ListTripsPage/styled";
+import { SpaceButtons } from "../HomePage/styled";
+import {CardTrip} from "../../components/CardTrip/CardTrip"
 
 export default function ListTripPages() {
   const [tripList, setTripList] = useState([]);
@@ -22,7 +27,8 @@ export default function ListTripPages() {
   const getTrips = () => {
     const url = `${BASE_URL}/trips`;
 
-    axios.get(url)
+    axios
+      .get(url)
       .then((res) => {
         setTripList(res.data.trips);
       })
@@ -32,22 +38,33 @@ export default function ListTripPages() {
   };
 
   const listTrip = tripList.map((trip) => {
-    return(
-      <div key={trip.id}>
-        <p>Nome: {trip.name}</p>
-        <p>Descrição: {trip.description}</p>
-        <p>Planeta: {trip.planet}</p>
-        <p>Duração: {trip.durationInDays}</p>
-        <p>Data: {trip.date}</p>
-      </div>
-    )
-  })
+    return (
+      <CardTrip key={trip.id}
+        name = {trip.name}
+        description = {trip.description}
+        planet = {trip.planet}
+        durationInDays = {trip.durationInDays}
+        date = {trip.date}
+      >
+      </CardTrip>
+    );
+  });
 
   return (
-    <div>
-      <button onClick={goToHomePage}>Voltar</button>
-      <button onClick={goToApplicationFormPage}>Increver-se</button>
-      {listTrip}
-    </div>
+    <ChakraProvider>
+      <CenterDiv>
+        <SpaceButtons>
+        <Button colorScheme="teal" onClick={goToHomePage}>
+          Voltar
+        </Button>
+        <Button colorScheme="teal" onClick={goToApplicationFormPage}>
+          Increver-se
+        </Button>
+        </SpaceButtons>
+        
+        <BigH1>Lista de viagens</BigH1>
+        {listTrip}
+      </CenterDiv>
+    </ChakraProvider>
   );
 }

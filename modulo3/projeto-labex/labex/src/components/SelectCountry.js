@@ -1,6 +1,8 @@
+import {SelectResized} from "../pages/ApplicationFormPage/styled"
+
 const SelectCountry = (props) => {
   return (
-    <select name="Country"
+    <SelectResized name="Country"
     name={"country"}
     value={props.form}
     onChange={props.onChange}
@@ -282,7 +284,7 @@ const SelectCountry = (props) => {
       <option value="Yemen">Yemen</option>
       <option value="Zambia">Zambia</option>
       <option value="Zimbabwe">Zimbabwe</option>
-    </select>
+    </SelectResized>
   );
 };
 

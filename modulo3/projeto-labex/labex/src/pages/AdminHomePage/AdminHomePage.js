@@ -3,6 +3,10 @@ import react, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../constants/urls";
 import { UseProtectedPage } from "../../Hook/UseProtectedPage";
+import { DivContainer, SpaceButtons } from "../ApplicationFormPage/styled";
+import { ChakraProvider, Button, Stack } from "@chakra-ui/react";
+import { DeleteIcon } from "@chakra-ui/icons";
+import { BigH1, CardTrip } from "./styled";
 
 export default function AdminHomePage() {
   const navigate = useNavigate();
@@ -46,34 +50,47 @@ export default function AdminHomePage() {
 
     axios
       .delete(url, axiosConfig)
-      .then((res) => console.log(res.data))
+      .then((res) => alert("Viagem excluída com sucesso"))
       .catch((err) => console.log(err.response));
   };
 
   const listTrip = tripList.map((trip) => {
     return (
-      <div key={trip.id}>
-        <div onClick={() => goToTripDetailsPage(trip.id)}>{trip.name}</div>
-
+      <CardTrip key={trip.id} onClick={() => goToTripDetailsPage(trip.id)}>
+        {trip.name}
         <div>
-          <button onClick={() => deleteTrip(trip.id)}>X</button>
+          <Button
+            colorScheme="teal"
+            leftIcon={<DeleteIcon boxSize={"2em"} />}
+            onClick={() => deleteTrip(trip.id)}
+          ></Button>
         </div>
-      </div>
+      </CardTrip>
     );
   });
 
   const logout = () => {
     localStorage.setItem("token", "");
-    window.location.reload()
-  }
+    window.location.reload();
+  };
 
   return (
-    <div>
-      <h1>Painel Administrativo</h1>
-      <button onClick={goToHomePage}>Voltar</button>
-      <button onClick={goToCreateTripPage}>Criar Viagem</button>
-      <button onClick={logout}>Logout</button>
+    <DivContainer>
+      <ChakraProvider>
+        <BigH1>Painel Administrativo</BigH1>
+        <SpaceButtons>
+          <Button colorScheme="teal" onClick={goToHomePage}>
+            Voltar
+          </Button>
+          <Button colorScheme="teal" onClick={goToCreateTripPage}>
+            Criar Viagem
+          </Button>
+          <Button colorScheme="teal" onClick={logout}>
+            Logout
+          </Button>
+        </SpaceButtons>
+      </ChakraProvider>
       <div>{listTrip}</div>
-    </div>
+    </DivContainer>
   );
 }

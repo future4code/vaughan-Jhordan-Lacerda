@@ -4,6 +4,15 @@ import { useNavigate } from "react-router-dom";
 import SelectCountry from "../../components/SelectCountry";
 import { BASE_URL } from "../../constants/urls";
 import useForm from "../../Hook/useForm";
+import {
+  BigH1,
+  DivContainer,
+  FormColumn,
+  InputResized,
+  SelectResized,
+  SpaceButtons,
+} from "./styled";
+import { ChakraProvider, Button, Select, Input, Stack } from "@chakra-ui/react";
 
 export default function ApplicationFormPage() {
   const [tripList, setTripList] = useState([]);
@@ -53,8 +62,8 @@ export default function ApplicationFormPage() {
   };
 
   const handleId = (e) => {
-    setIdViagem(e.target.value)
-  }
+    setIdViagem(e.target.value);
+  };
 
   const optionTrips = tripList.map((trip) => {
     return (
@@ -65,58 +74,78 @@ export default function ApplicationFormPage() {
   });
 
   return (
-    <div>
-      <h1>Inscreva-se para uma viagem</h1>
-      <form onSubmit={applyToTrip}>
-        <select onChange={handleId} required>
-          <option value="">Selecione a viagem</option>
-          {optionTrips}
-        </select>
-        <input
-          name={"name"}
-          placeholder="Nome"
-          value={form.name}
-          onChange={onChange}
-          pattern={"^.{3,}"}
-          title="Você deve inserir, no mínimo 3 letras"
-          required
-        />
-        <input
-          name={"age"}
-          placeholder="Idade"
-          value={form.age}
-          onChange={onChange}
-          type={"number"}
-          min="18"
-          required
-        />
-        <input
-          name={"applicationText"}
-          placeholder="Texto de candidatura"
-          value={form.applicationText}
-          onChange={onChange}
-          pattern={"^.{30,}"}
-          title="Você deve inserir, no mínimo 30 letras"
-          required
-        />
-        <input
-          name={"profession"}
-          placeholder="Profissão"
-          value={form.profession}
-          onChange={onChange}
-          pattern={"^.{10,}"}
-          title="Você deve inserir, no mínimo 10 letras"
-          required
-        />
-        <SelectCountry
-          name={"country"}
-          value={form.country}
-          onChange={onChange}
-          required
-        />
-        <button>Enviar</button>
-        <button onClick={goToListTripPage}>Voltar</button>
-      </form>
-    </div>
+    <DivContainer>
+      <ChakraProvider>
+        <BigH1>Inscreva-se para uma viagem</BigH1>
+
+        <FormColumn onSubmit={applyToTrip}>
+          <Stack spacing={6}>
+            <Select
+              bg="lightgray"
+              borderColor="lightgrey"
+              size="md"
+              onChange={handleId}
+              required
+              isRequired={"true"}
+            >
+              <option value="">Selecione a viagem</option>
+              {optionTrips}
+            </Select>
+
+            <Input
+              name={"name"}
+              placeholder="Nome"
+              value={form.name}
+              onChange={onChange}
+              pattern={"^.{3,}"}
+              title="Você deve inserir, no mínimo 3 letras"
+              required
+            />
+            <Input
+              name={"age"}
+              placeholder="Idade"
+              value={form.age}
+              onChange={onChange}
+              type={"number"}
+              min="18"
+              required
+            />
+            <Input
+              name={"applicationText"}
+              placeholder="Texto de candidatura"
+              value={form.applicationText}
+              onChange={onChange}
+              pattern={"^.{30,}"}
+              title="Você deve inserir, no mínimo 30 letras"
+              required
+            />
+            <Input
+              name={"profession"}
+              placeholder="Profissão"
+              value={form.profession}
+              onChange={onChange}
+              pattern={"^.{10,}"}
+              title="Você deve inserir, no mínimo 10 letras"
+              required
+            />
+
+            <SelectCountry
+              name={"country"}
+              value={form.country}
+              onChange={onChange}
+              required
+            />
+          </Stack>
+          <SpaceButtons>
+            <Button colorScheme="teal">
+              Enviar
+            </Button>
+            <Button colorScheme="teal" onClick={goToListTripPage}>
+              Voltar
+            </Button>
+          </SpaceButtons>
+        </FormColumn>
+      </ChakraProvider>
+    </DivContainer>
   );
 }
