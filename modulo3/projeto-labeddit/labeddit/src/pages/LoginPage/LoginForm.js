@@ -11,6 +11,8 @@ import {
 import useForm from "../../hook/useForm";
 import { InputContainer } from "./styled";
 import { EmailIcon, LockIcon } from "@chakra-ui/icons";
+import { login } from "../../services/user";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const { form, onChange, cleanFields } = useForm({
@@ -18,14 +20,16 @@ const LoginForm = () => {
     password: "",
   });
 
-  const onSubmit = (event) => {
+  const navigate = useNavigate();
+
+  const onSubmitForm = (event) => {
     event.preventDefault();
-    console.log(form);
+    login(form, navigate);
   };
 
   return (
     <InputContainer>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmitForm}>
         <Stack spacing={3}>
           <FormControl isRequired>
             <InputGroup>
@@ -61,7 +65,6 @@ const LoginForm = () => {
         </Stack>
       </form>
     </InputContainer>
-    
   );
 };
 
