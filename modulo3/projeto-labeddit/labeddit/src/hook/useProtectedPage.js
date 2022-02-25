@@ -8,7 +8,7 @@ export const UseProtectedPage = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    if (token === null || token === "") { 
+    if (!token) { 
       goToLogin(navigate)
     }
   }, [navigate]);

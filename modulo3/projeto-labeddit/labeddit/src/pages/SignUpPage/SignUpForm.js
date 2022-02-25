@@ -11,6 +11,8 @@ import {
 import React from "react";
 import useForm from "../../hook/useForm";
 import { InputContainer, ScreenContainer } from "./styled";
+import { useNavigate } from "react-router-dom";
+import { signUp } from "../../services/user";
 
 const SignUpForm = () => {
   const { form, onChange, cleanFields } = useForm({
@@ -18,10 +20,12 @@ const SignUpForm = () => {
     email: "",
     password: "",
   });
+  
+  const navigate = useNavigate()
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log(form);
+    signUp(form, navigate)
   };
 
   return (
