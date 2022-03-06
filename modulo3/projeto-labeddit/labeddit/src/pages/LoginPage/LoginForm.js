@@ -41,6 +41,7 @@ const LoginForm = () => {
                 type="email"
                 value={form.email}
                 onChange={onChange}
+                variant="filled"
               />
             </InputGroup>
           </FormControl>
@@ -55,6 +56,7 @@ const LoginForm = () => {
                 type="password"
                 value={form.password}
                 onChange={onChange}
+                variant="filled"
               />
             </InputGroup>
           </FormControl>

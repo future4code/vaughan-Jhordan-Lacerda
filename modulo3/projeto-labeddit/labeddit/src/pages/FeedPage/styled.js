@@ -18,10 +18,6 @@ export const FormContainer = styled.form`
     width: 30%;
 `
 
-// export const DivWithPadding = styled.div`
-//     padding: 100px;
-// `
-
 export const ListPostContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -29,16 +25,6 @@ export const ListPostContainer = styled.div`
     align-self: center;
     width: 30%;
     margin-top: 15px;
-`
-
-export const RightFlexP = styled.p`
-    display: flex;
-    align-items: center;
-    margin-left: 30%;
-`
-
-export const LeftFlexP = styled.p`
-    
 `
 
 export const LikeCommentContainer = styled.div`

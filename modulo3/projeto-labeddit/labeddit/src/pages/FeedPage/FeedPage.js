@@ -7,22 +7,10 @@ import {
 import { FeedForm } from "./FeedForm";
 import axios from "axios";
 import { BASE_URL } from "../../constants/urls";
-import {
-  Grid,
-  GridItem,
-  IconButton,
-} from "@chakra-ui/react";
-import { Icon } from "@chakra-ui/icons";
-import { VscComment } from "react-icons/vsc";
-import {
-  TiArrowUpOutline,
-  TiArrowUpThick,
-  TiArrowDownOutline,
-  TiArrowDownThick,
-} from "react-icons/ti";
 import { goToLogin, goToPostPage } from "../../routes/cordinator";
 import { useNavigate } from "react-router-dom";
-import Post from "../../components/PostList/Post";
+import Post from "../../components/Post/Post";
+import { getPosts } from "../../services/post";
 
 const FeedPage = () => {
   const [arrPosts, setArrPosts] = useState([]);
@@ -31,29 +19,10 @@ const FeedPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    getPosts();
+    getPosts(setArrPosts, navigate);
   }, [arrPosts]);
 
   UseProtectedPage();
-
-  const getPosts = () => {
-    const token = localStorage.getItem("token");
-
-    axios
-      .get(`${BASE_URL}/posts`, { headers: { Authorization: token } })
-      .then((res) => {
-        setArrPosts(res.data);
-      })
-      .catch((err) => {
-        if (
-          err.response.data ===
-          "Falha na autenticação. Token expirado ou não inserido no campo 'Authorization' dos headers "
-        ) {
-          goToLogin(navigate);
-          alert("Login expirado");
-        }
-      });
-  };
 
   const click = () => {
     setIsClicked(!isClicked);
