@@ -5,10 +5,10 @@ import { TiArrowDownOutline, TiArrowUpOutline } from "react-icons/ti";
 export const CommentList = (props) => {
   return (
     <Grid h="226px" templateRows="1fr 2fr 1fr" border="1px" borderColor="black">
-      <GridItem rowSpan={1} bg="lightgrey">
+      <GridItem rowSpan={1} bg="lightgrey" pl={2} pt={2}>
         Comentado por: {props.comment.userId}
       </GridItem>
-      <GridItem rowSpan={2} bg="lightgrey">
+      <GridItem rowSpan={2} bg="lightgrey" pl={2} pt={2}>
         <p>{props.comment.body}</p>
       </GridItem>
       <GridItem rowSpan={3} rowStart={4} bg="lightgrey" pl={2} pt={2} pb={2}>
