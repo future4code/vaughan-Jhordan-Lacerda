@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import react from "react";
 import useForm from "../../hook/useForm";
+import { submitNewPost } from "../../services/post";
 import { FormContainer, InputContainer } from "./styled";
 
 export const FeedForm = () => {
@@ -21,6 +22,7 @@ export const FeedForm = () => {
   const onSubmit = (event) => {
     event.preventDefault();
     console.log(form);
+    submitNewPost(form)
   };
   return (
     <InputContainer>

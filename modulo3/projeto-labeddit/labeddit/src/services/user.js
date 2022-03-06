@@ -10,7 +10,7 @@ export const login = (body, navigate) => {
       goToFeedPage(navigate);
     })
     .catch((err) => {
-      alert(err.response.data);
+      alert(err.response.data.message);
     });
 };
 
@@ -22,6 +22,6 @@ export const signUp = (body, navigate) => {
       navigate("/");
     })
     .catch((err) => {
-      alert(err.response.data);
+      alert(err.response.data.message);
     });
 };
