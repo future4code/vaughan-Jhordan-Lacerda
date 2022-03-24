@@ -8,12 +8,15 @@
     "ex2": "tsc && node ./build/ex2.js",
     "ex3": "tsc && node ./build/ex3.js",
     "ex4": "tsc && node ./build/ex4.js",
-    "ex5": "tsc && node ./build/ex4.js"
+    "ex5": "tsc && node ./build/ex5.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "typescript": "^4.4.4"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.23"
   }
 }
