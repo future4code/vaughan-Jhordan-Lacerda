@@ -1,0 +1,10 @@
+1°) a) Devo utilizar o get
+b) "/users"
+
+2°)a) Passei por Query params, pois estou fazendo a busca dentro do array de users e não procurando por um especifíco
+b) Eu tentei, porém não consegui
+
+3°) a) constuma-se utilizar o PathParams para esse tipo de busca
+
+4°)a) Nada mudou, continuou com o mesmo funcionamento
+b) Não, pois o PUT é utilizado para atualizar algum valor.
