@@ -4,6 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { AddressInfo } from "net";
 import connection from "./connection";
+import main from "./request";
 
 dotenv.config();
 
@@ -19,3 +20,5 @@ const server = app.listen(process.env.PORT || 3003, () => {
       console.error(`Failure upon starting server.`);
     }
   });
+
+  main()
