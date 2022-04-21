@@ -13,7 +13,7 @@ class IndustrialClinet extends Industry implements Client {
     super(machinesQuantity, cep);
   }
 
-  public getIndustryNumber(): string {
+  public getIndustryNumber(): number {
     return this.insdustryNumber;
   }
 
