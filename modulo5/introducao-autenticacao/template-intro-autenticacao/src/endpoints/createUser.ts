@@ -32,7 +32,7 @@ export default async function createUser(
 
       res.status(201).send({ newUser })
 
-   } catch (error) {
+   } catch (error: any) {
 
       if (res.statusCode === 200) {
          res.status(500).send({ message: "Internal server error" })
