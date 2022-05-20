@@ -9,6 +9,10 @@ const pokemonDatabase = new PokemonDatabase();
 const pokemonBusiness = new PokemonBusiness(pokemonDatabase);
 const pokemonController = new PokemonController(pokemonBusiness);
 
+userRouter.get("/:name", (req: Request, res: Response) =>
+  pokemonController.getPokemonByName(req, res)
+);
+
 userRouter.get("/all", (req: Request, res: Response) =>
   pokemonController.getAllPokemon(req, res)
 );

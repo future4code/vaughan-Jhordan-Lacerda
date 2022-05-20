@@ -1,3 +1,6 @@
+import { Pokemon } from "./Pokemon";
+
 export interface IPokeData {
-  getAllPokemons(): Promise<any[]>;
+  getAllPokemons(): Promise<Pokemon[]>;
+  getPokemonByName(name: string): Promise<Pokemon>;
 }
