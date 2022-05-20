@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import e, { Request, Response } from "express";
 import { PokemonBusiness } from "../business/PokemonBusiness";
 import { BaseDatabase } from "../data/BaseDatabase";
 import { BaseError } from "../error/BaseError";
@@ -8,7 +8,9 @@ export class PokemonController {
 
   async getAllPokemon(req: Request, res: Response): Promise<void> {
     try {
-      const pokemons = await this.pokemonBusiness.getAllPokemons();
+      const { page } = req.query;
+
+      const pokemons = await this.pokemonBusiness.getAllPokemons(Number(page));
 
       res.status(200).send({ pokemons });
     } catch (error) {
@@ -35,5 +37,23 @@ export class PokemonController {
     }
 
     await BaseDatabase.destroyConnection();
+  }
+
+  async getPokemonsByType(req: Request, res: Response): Promise<void> {
+    try {
+      const type = req.query.type as string;
+      const pages = req.query.pages;
+
+      const pokemons = await this.pokemonBusiness.getPokemonByType(
+        type,
+        Number(pages)
+      );
+
+      res.status(200).send({ pokemons });
+    } catch (error) {
+      if (error instanceof BaseError) {
+        res.status(error.code).send({ message: error.message });
+      }
+    }
   }
 }
