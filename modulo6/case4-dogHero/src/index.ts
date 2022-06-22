@@ -3,6 +3,7 @@ import cors from "cors";
 import { AddressInfo } from "net";
 import knex from "knex";
 import dotenv from "dotenv";
+import { WalkRouter } from "./router/WalkRouter";
 
 dotenv.config();
 
@@ -10,6 +11,8 @@ const app: Express = express();
 
 app.use(express.json());
 app.use(cors());
+
+app.use("/dogWalk", WalkRouter);
 
 const server = app.listen(process.env.PORT || 3003, () => {
   if (server) {
