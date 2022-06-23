@@ -10,7 +10,6 @@ export class WalkDatabase extends BaseDataBase implements IWalkData {
     const index = await this.connection()
       .select("*")
       .from(this.TABLE_NAME)
-      .join(this.SECOND_TABLE_NAME, "PetWalk.id", "=", "Pets.id")
       .limit(5)
       .offset(offset);
 
