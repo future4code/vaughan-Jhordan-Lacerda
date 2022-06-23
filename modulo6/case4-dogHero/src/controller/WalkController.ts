@@ -54,4 +54,30 @@ export class WalkController {
         res.status(400).send({ error: error.message });
     }
   }
+
+  async startWalk(req: Request, res: Response): Promise<void>{
+    try {
+      const {walkId} = req.body;
+
+      const result = await this.WalkBusiness.startWalk(walkId);
+
+      res.status(200).send(result);
+    } catch (error) {
+      if (error instanceof Error)
+        res.status(400).send({ error: error.message });
+    }
+  }
+
+  async finishWalk(req: Request, res: Response): Promise<void>{
+    try {
+      const {walkId} = req.body;
+
+      const result = await this.WalkBusiness.finishWalk(walkId);
+
+      res.status(200).send(result);
+    } catch (error) {
+      if (error instanceof Error)
+        res.status(400).send({ error: error.message });
+    }
+  }
 }

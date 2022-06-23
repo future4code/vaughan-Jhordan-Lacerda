@@ -1,7 +1,6 @@
 import { v4 } from "uuid";
 import { IWalkData } from "../model/IIWalkData";
 import { DogWalkInputDTO } from "../model/walk";
-import { IdGenerator } from "../services/IdGenerator/IdGenerator";
 
 export class WalkBusiness {
   constructor(private IWalkData: IWalkData) {}
@@ -37,7 +36,22 @@ export class WalkBusiness {
     );
 
     return { message: "Passeio criado com sucesso" };
-
-    return postCreateWalkFromWalkData;
   }
+
+  async startWalk(walkId: string): Promise<any> {
+    const walk = await this.IWalkData.getWalkById(walkId);
+
+    await this.IWalkData.insertStatustWalk(walkId, "FAZENDO");
+
+    return { message: "Passeio iniciado com sucesso!" };
+  }
+
+  async finishWalk(walkId: string): Promise<any> {
+    const walk = await this.IWalkData.getWalkById(walkId);
+
+    await this.IWalkData.insertStatustWalk(walkId, "FEITO");
+
+    return { message: "Passeio concluído com sucesso!" };
+  }
+
 }

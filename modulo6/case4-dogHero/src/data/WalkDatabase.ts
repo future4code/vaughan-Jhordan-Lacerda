@@ -35,4 +35,23 @@ export class WalkDatabase extends BaseDataBase implements IWalkData {
       })
       .into(this.TABLE_NAME);
   }
+
+  async getWalkById(id: string): Promise<Walk[]> {
+    const walk = await this.connection()
+      .select()
+      .from(this.TABLE_NAME)
+      .where("id", "=", `${id}`);
+
+    if (!walk[0]) {
+      throw new Error("Passeio não encontrado pelo id informado");
+    }
+
+    return walk[0];
+  }
+
+  async insertStatustWalk(id: string, status: string): Promise<void> {
+    await this.connection.raw(
+      `UPDATE ${this.TABLE_NAME} SET status = '${status}' WHERE id = '${id}'`
+    );
+  }
 }
