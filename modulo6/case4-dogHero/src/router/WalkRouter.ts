@@ -12,3 +12,7 @@ const walkController = new WalkController(walkBusiness);
 WalkRouter.get("/index", (req: Request, res: Response) =>
   walkController.getIndex(req, res)
 );
+
+WalkRouter.post("/create-walk", (req: Request, res: Response) =>
+  walkController.createWalk(req, res)
+);

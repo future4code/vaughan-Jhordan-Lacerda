@@ -1,5 +1,5 @@
 import { IWalkData } from "../model/IIWalkData";
-import { Walk } from "../model/walk";
+import { DogWalkInputDTO, Walk } from "../model/walk";
 import { BaseDataBase } from "./BaseDataBase";
 
 export class WalkDatabase extends BaseDataBase implements IWalkData {
@@ -15,5 +15,24 @@ export class WalkDatabase extends BaseDataBase implements IWalkData {
       .offset(offset);
 
     return index;
+  }
+
+  async createWalk(
+    id: string,
+    input: DogWalkInputDTO,
+    price: number
+  ): Promise<void> {
+    const newWalk = await this.connection()
+      .insert({
+        id: id,
+        date_schedule: input.appointmentDate,
+        price: price,
+        latitude: input.latitude,
+        longitude: input.longitude,
+        duration: input.duration,
+        start_date: input.startTime,
+        end_date: input.endTime,
+      })
+      .into(this.TABLE_NAME);
   }
 }
