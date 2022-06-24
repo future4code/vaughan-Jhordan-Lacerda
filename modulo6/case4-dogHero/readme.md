@@ -11,6 +11,8 @@ Projeto Backend desenvolvido para processo seletivo DogHero
 - Inicialização de um passeio já existente
 - Finalização de um passeio já existente
 
+##
+
 ### 🛠 Tecnologias Utilizadas:
 
 Para este projeto eu usei as seguintes tecnologias:
@@ -22,6 +24,13 @@ Para este projeto eu usei as seguintes tecnologias:
 - Knex
 - Postman
 - Uuid
+
+##
+
+### 🚧 Em Desenvolvimento
+- Deploy no Heroku
+
+##
 
 ## 📃 Documentação
 
