@@ -1,4 +1,4 @@
-## Pokemon-Go
+## DogHero
 
 ## 📓 Sobre o projeto:
 Projeto Backend desenvolvido para processo seletivo DogHero
@@ -25,7 +25,7 @@ Para este projeto eu usei as seguintes tecnologias:
 
 ## 📃 Documentação
 
-[Documentação da API](https://documenter.getpostman.com/view/19299054/Uyxohj6p)
+[Documentação da API](https://documenter.getpostman.com/view/19299054/UzBqq5mq)
 
 ##
 
